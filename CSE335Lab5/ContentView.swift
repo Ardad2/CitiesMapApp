@@ -13,7 +13,7 @@ struct ContentView: View {
         city(name:"New Delhi", picture: "NewDelhiPicture", description: "The capital city of India."),
         city(name:"Tempe", picture: "TempePicture", description: "Located near the capital city, Phoenix, of Arizona, United States"),
         city(name:"Barcelona", picture: "BarcelonaPicture", description: "A city in Spain."),
-        city(name:"Singapore", picture: "SingaporePicture", description:"A city country."),
+        city(name:"Paris", picture: "ParisPicture", description:"Capital of France."),
         city(name:"Cape Town", picture: "CapeTownPicture", description:"A capital of South Africa.")
     ]
 
