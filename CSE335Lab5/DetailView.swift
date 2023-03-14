@@ -7,6 +7,9 @@
 
 import Foundation
 
+import CoreLocation
+import MapKit
+
 import SwiftUI
 
 struct DetailView: View {
