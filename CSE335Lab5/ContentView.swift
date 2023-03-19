@@ -35,7 +35,7 @@ struct ContentView: View {
     
             List {
                     ForEach(cityData) { datum in
-                        NavigationLink(destination: DetailView(picture: datum.picture, name: datum.name, description: datum.description))
+                        NavigationLink(destination: DetailView(picture: datum.picture, cityName: datum.name, description: datum.description))
                             {
                                 HStack {
                                     Text(datum.name)
