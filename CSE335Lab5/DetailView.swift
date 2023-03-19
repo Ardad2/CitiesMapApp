@@ -45,7 +45,7 @@ struct DetailView: View {
     
     
     var body: some View {
-        VStack(){
+        NavigationView(){
             
             Map(coordinateRegion: $region,
                 interactionModes: .all,
@@ -66,22 +66,20 @@ struct DetailView: View {
             }
             
             
-        }
+        }.onAppear{self.forwardGeocoding(addressStr: self.cityName)}
     }
     
-    func forwardGeocoding(addressStr: String) -> CLLocationCoordinate2D
+    func forwardGeocoding(addressStr: String)
     {
         let geoCoder = CLGeocoder();
         let addressString = addressStr
         
-        var getLatitude = 0.0;
-        var getLongitude = 0.0;
+        var longitude = 0.0;
 
 
 
         CLGeocoder().geocodeAddressString(addressString, completionHandler:
-                                            {(placemarks,
-                                              error) in
+                                            {(placemarks, error) in
             
             if error != nil {
                 print("Geocode failed: \(error!.localizedDescription)")
@@ -95,8 +93,7 @@ struct DetailView: View {
                 print(coords.latitude)
                 print(coords.longitude)
                 
-                getLatitude = coords.latitude
-                getLongitude = coords.longitude;
+                longitude = coords.longitude
                 
                 
                 
@@ -116,12 +113,7 @@ struct DetailView: View {
                 
             }
         })
-        
-        return CLLocationCoordinate2D(
-            latitude: getLatitude,
-            longitude: getLongitude
-        );
-    }
+            }
     
     
     
